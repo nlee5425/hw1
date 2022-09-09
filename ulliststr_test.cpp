@@ -88,16 +88,20 @@ int main(int argc, char* argv[])
 	// 	cout << "front: " << test.front() << endl << "back: " << test.back() << endl;
 	// }
 
-	test.push_back("3");
-	cout << "back: " << test.back() << endl;
-	test.pop_back();
-	test.push_back("4");
-	cout << "back: " << test.back() << endl;
-	test.push_front("5");
-	cout << "front: " << test.front() << endl;
-	test.pop_front();
-	test.push_front("6");
-	cout << "front: " << test.front() << endl;
+	// test.push_back("3");
+	// cout << "back: " << test.back() << endl;
+	// test.pop_back();
+	// test.push_back("4");
+	// cout << "back: " << test.back() << endl;
+	// test.push_front("5");
+	// cout << "front: " << test.front() << endl;
+	// test.pop_front();
+	// test.push_front("6");
+	// cout << "front: " << test.front() << endl;
+
+	//test.pop_back();
+
+	test.clear();
 	
 
 
