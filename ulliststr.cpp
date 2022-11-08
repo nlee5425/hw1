@@ -161,29 +161,32 @@ std::string* ULListStr::getValAtLoc(size_t loc) const{
 	//using & syntax for return
 	//starts from head and goes to tail 
 	//loc is the element of all the nodes
-	
-	//while (temp != nullptr) {
-		//Item* temp2 = head->next;
-
-		// temp->next = 
-		// temp->val[temp->last] = val;
-	//}
 	Item* temp = head_;
+	int newloc = loc + 1;
 	int loc2 = loc;
-	while ( loc2 != 0 ) {
-		int beg = temp->first;
-		int end = temp->last;
+	++loc2;
+	int currloc = 0;
+	int beg = temp->first;
+	int end = temp->last;
+	int totsize = size_;
+	while ( currloc != newloc ) {
 		int tot = -1 * (beg - end);
-		if ( loc2 >= tot ) { //if loc is greater than tot
+		if ( loc2 > tot ) { //if loc is greater than tot
+			totsize -= tot;
+			currloc += tot;
 			loc2 -= tot;
 			temp = temp->next; 
+			beg = temp->first;
+			end = temp->last;
 		}
 		else { //if loc is less or equal to tot
-			temp->first++;
+			++beg;
+			++currloc;
 			loc2--;	
 		}
 	}
-	return &(temp->val[temp->first]);
+	--beg;
+	return &(temp->val[beg]);
 }
 void ULListStr::set(size_t loc, const std::string& val)
 {
